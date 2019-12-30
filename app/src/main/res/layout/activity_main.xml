@@ -15,4 +15,12 @@
         android:text="@string/leo_wang"
         android:textAlignment="center"
         style="@style/name_style" />
+
+    <ImageView
+        android:id="@+id/star_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/yellow_star"
+        app:srcCompat="@android:drawable/star_big_on"
+        android:layout_marginTop="@dimen/name_margin"/>
 </LinearLayout>
