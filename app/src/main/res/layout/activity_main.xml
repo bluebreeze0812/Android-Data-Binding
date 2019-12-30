@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/leo_wang"
         android:textAlignment="center"
-        style="@style/name_style" />
+        style="@style/NameStyle" />
 
     <ImageView
         android:id="@+id/star_image"
@@ -22,5 +22,5 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/yellow_star"
         app:srcCompat="@android:drawable/star_big_on"
-        android:layout_marginTop="@dimen/name_margin"/>
+        android:layout_marginTop="@dimen/layout_margin"/>
 </LinearLayout>
