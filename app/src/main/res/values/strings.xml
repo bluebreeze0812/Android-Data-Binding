@@ -2,10 +2,7 @@
     <string name="app_name">AboutMe</string>
     <string name="leo_wang">Leo Wang</string>
     <string name="yellow_star">yellow star</string>
-    <string name="bio"> Hi, I\'m Leo , a full-stack developer with 4 years of experience.\n
-        I have worked with java and spring boot extensively during both of my positions at FKW and
-        Hi-TECH, as well as some well-known frontend frameworks, such as React and Vue.\n
-        When I\'m not working, I like to fishing and
-        hiking. Or maybe stay at home read some books to expand my knowledge.\n</string>
+    <string name="bio"> Hi, I\'m Leo , a full-stack developer with 4 years of experience.\n\nI have worked with java and spring boot extensively during both of my positions at FKW andHi-TECH, as well as some well-known frontend frameworks, such as React and Vue.\n\nWhen I\'m not working, I like to fishing andhiking. Or maybe stay at home read some books to expand my knowledge.\n</string>
     <string name="what_is_your_name">what is your name?</string>
+    <string name="done">Done</string>
 </resources>
