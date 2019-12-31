@@ -10,27 +10,42 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.example.aboutme.databinding.ActivityMainBinding
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    private lateinit var binding: ActivityMainBinding
 
-        findViewById<Button>(R.id.done_button).setOnClickListener {
+    data class MyName(var name: String = "", var nickName: String = "")
+
+    private val myName = MyName("Leo Wang")
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        binding.myName = myName
+
+        binding.doneButton.setOnClickListener {
             addNickName(it)
         }
     }
 
     @SuppressLint("ServiceCast")
     private fun addNickName(view: View) {
-        val editView = findViewById<EditText>(R.id.nickname_edit)
-        val showView = findViewById<TextView>(R.id.nickname_text)
-        showView.text = editView.text
-        editView.visibility = View.GONE
-        view.visibility = View.GONE
-        showView.visibility = View.VISIBLE
+        binding.apply {
+            val editView = binding.nicknameEdit
+            myName?.nickName = editView.text.toString()
+            invalidateAll()
+            val showView = binding.nicknameText
+            showView.text = editView.text
+            editView.visibility = View.GONE
+            view.visibility = View.GONE
+            showView.visibility = View.VISIBLE
+        }
 
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view.windowToken, 0)
